@@ -1,0 +1,25 @@
+{
+  "name": "guitarexercises",
+  "version": "1.0.0",
+  "description": "Simple one-page website to display guitar exercises",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amrdgzmn/GuitarExercises.git"
+  },
+  "author": "Amor De Guzman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amrdgzmn/GuitarExercises/issues"
+  },
+  "homepage": "https://github.com/amrdgzmn/GuitarExercises#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "handlebars": "^4.7.8",
+    "nodemon": "^3.1.9"
+  }
+}

@@ -19,7 +19,7 @@ app.listen(PORT, () => {
 async function main () {
     console.log("main running!");
     // Serve static files from public/
-    app.use(express.static(path.join(__dirname, "../public"))); 
+    app.use(express.static(path.join(__dirname, "public"))); 
 
 
     app.engine("hbs", expresshbs.engine({
@@ -28,7 +28,7 @@ async function main () {
     }))
 
     app.set("view engine", "hbs");
-    app.set("views", "./views");
+    app.set('views', path.join(__dirname, 'views')); 
     app.use(express.json());
     app.use(router);
 }

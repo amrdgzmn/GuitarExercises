@@ -13,11 +13,20 @@ body {
     align-items: center;
 }
 
+.ui-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
 .options-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: inherit;
 }
 
 .header {
@@ -31,6 +40,9 @@ body {
     align-items: center;
     background-color: #BfBfBf;
     border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: inherit;
 }
 
 .buttons-ui {
@@ -48,7 +60,7 @@ body {
     font-size: 24px;
 }
 
-.exercise-choice, .mode-scale-choice {
+.exercise-choice, .mode-scale-choice, .penta-scale-choice {
     background-color: #2f2f2f;
     border: 1rem;
     border-radius: 20px;
@@ -61,7 +73,7 @@ body {
     width: 200px;
   }
 
-.exercise-choice:hover, .mode-scale-choice:hover{
+.exercise-choice:hover, .mode-scale-choice:hover, .penta-scale-choice:hover{
     background-color: #4f4f4f;
     border: 1rem;
     border-radius: 100px;
@@ -84,3 +96,76 @@ body {
     align-items: center;
 }
 
+.display-container {
+    background-color: #4f4f4f;
+    color:#BfBfBf;
+    height: inherit;
+    width: 300px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.info-container {
+    background-color:#AfAfAf;
+    color: #1F1F1F;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 0;
+}
+
+.display-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.scale-header-container, .key-header-container {
+    margin: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    flex: auto;
+    height: 50px;
+    width: 100px;
+    border-style: solid;
+    border-color: #1F1F1F;
+    border-width: 5px;
+}
+
+.generated-scales-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pair-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+/* .key-word, .scale-word {
+    float: left;
+} */
+
+.generated-scale-info-container, .generated-key-info-container {
+    margin: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    flex: auto;
+    height: 50px;
+    width: 100px;
+}

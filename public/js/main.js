@@ -236,6 +236,6 @@ async function generatePentaExercise(scale) {
 
         document.querySelector("div#generated-scales-container").insertAdjacentHTML("beforeend", generatedScaleHTML);
 
-        await sleep(30);
+        await sleep(5000);
     }
 }

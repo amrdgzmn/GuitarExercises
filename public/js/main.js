@@ -3,12 +3,14 @@ const pentatonicButton = document.querySelector("#ps-button");
 const psButton = document.querySelector("#ps-button");
 
 let exerciseChosen = false
+let chosenScale = ""
 let scale = null;
 let keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', "A#", 'B']
 let scales = ["Ionian", "Dorian", "Phyrgian", "Lydian", "Mixolydian", "Aeolian", "Locrian"]
 let pentaScales = ["Dorian", "Phyrgian", "Mixolydian"]
 let generatedScale = ``
 let keyInfo = ``
+let seconds = 5
 
 let modeOptions = `
             <div class = "question-container">
@@ -44,6 +46,13 @@ let modeOptions = `
                     </div>
                 </div>
             </div>
+            <div class = "question-container">
+                <span class = "question">Time between generations:</span>
+            </div>
+            <div class = "sleep-container" id="sleep-container">
+                <input type = "number" class ="sleep-option" id="sleep-input" placeholder="5" value="5" max="10", min="1">
+                <button class="sleep-option" id="submit-button">Start!</button>
+            </div>
 `
 
 let pentatonicOptions = `
@@ -69,7 +78,7 @@ let pentatonicOptions = `
             </div>
 `
 
-display = `
+let display = `
     <div class="info-container" id="info-container">
         <div class="display-header-container">
             <div class = "scale-header-container">
@@ -98,12 +107,18 @@ modeButton.addEventListener('click', async (e) => {
     // Add event listeners after elements exist
     document.querySelectorAll(".mode-scale-choice").forEach(button => {
         button.addEventListener("click", async (e) => {
-            let chosenScale = e.target.innerText;
+            chosenScale = e.target.innerText;
             console.log(`${chosenScale} pressed`);
+            document.querySelector("div#generated-scales-container").innerHTML = ""
+        });
+    });
+
+    let submitButton = document.getElementById("submit-button");
+        submitButton.addEventListener("click", async (e) => {
+            seconds = document.getElementById("sleep-input").value
             document.querySelector("div#generated-scales-container").innerHTML = ""
             generateModeExercise(chosenScale);
         });
-    });
 }); 
 
 pentatonicButton.addEventListener('click', async (e) => {
@@ -119,7 +134,7 @@ pentatonicButton.addEventListener('click', async (e) => {
    // Add event listeners after elements exist
    document.querySelectorAll(".penta-scale-choice").forEach(button => {
        button.addEventListener("click", async (e) => {
-           let chosenScale = e.target.innerText;
+           chosenScale = e.target.innerText;
            console.log(`${chosenScale} pressed`);
            document.querySelector("div#generated-scales-container").innerHTML = ""
            generatePentaExercise(chosenScale);
@@ -186,7 +201,7 @@ async function generateModeExercise(scale) {
 
         document.querySelector("div#generated-scales-container").insertAdjacentHTML("beforeend", generatedScaleHTML);
 
-        await sleep(5*1000);
+        await sleep(seconds*1000);
     }
 }
 
@@ -236,6 +251,6 @@ async function generatePentaExercise(scale) {
 
         document.querySelector("div#generated-scales-container").insertAdjacentHTML("beforeend", generatedScaleHTML);
 
-        await sleep(5*1000);
+        await sleep(seconds*1000);
     }
 }

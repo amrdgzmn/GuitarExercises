@@ -103,6 +103,8 @@ body {
     width: 300px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .info-container {
